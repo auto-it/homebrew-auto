@@ -2,11 +2,11 @@ class Auto < Formula
   desc "Generate releases based on semantic version labels on pull requests."
   homepage "https://intuit.github.io/auto/home.html"
   url "https://github.com/intuit/auto/releases/download/v7.15.2/auto-macos.gz"
-  sha256 "5b1026f18b8274be869245ed63427bf8ddac0739c67be12c4a769ac948824eeb"
+  sha256 "6515358f6306e7acbf2eb3bb35dc54157e8a040a127f0d1d80160dda5cd832fc"
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--disable-dynamic"
-    system "make", "install"
+    libexec.install Dir["*"]
+    bin.install_symlink libexec/"bin/heroku"
   end
 
   test do
