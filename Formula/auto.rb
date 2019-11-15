@@ -6,7 +6,7 @@ class Auto < Formula
 
   def install
     libexec.install Dir["*"]
-    bin.install_symlink libexec/"bin/heroku"
+    bin.install_symlink libexec/"bin/auto"
   end
 
   test do
