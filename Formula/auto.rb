@@ -7,6 +7,7 @@ class Auto < Formula
   def install
     libexec.install Dir["*"]
     chmod "+x", libexec/"auto-macos"
+    bin.install_symlink libexec/"bin/auto"
   end
 
   test do
